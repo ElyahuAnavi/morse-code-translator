@@ -126,6 +126,4 @@ After launching the server, the API endpoints can be accessed at `http://localho
 
 Feel free to clone the repo, try it out, and let me know what you think! Your feedback is highly appreciated.
 
----
 
-This README provides a comprehensive overview of your project, including setup instructions, key features, dependencies, CI/CD pipeline configuration, and API endpoints.
