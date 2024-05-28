@@ -80,41 +80,6 @@ The workflow is defined in the `.github/workflows/ci.yml` file. It triggers on p
 ### Branch Protection
 The `main` branch is protected, requiring all CI checks to pass before merging.
 
-```yaml
-name: CI Pipeline
-
-on:
-  push:
-    branches:
-      - '*'
-  pull_request:
-    branches:
-      - main
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14, 16]
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: npm test
-```
-
 ## API Endpoints Overview 🚏
 
 After launching the server, the API endpoints can be accessed at `http://localhost:3000`.
