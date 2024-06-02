@@ -1,3 +1,4 @@
+// src/server.ts
 import express from 'express';
 import bodyParser from 'body-parser';
 import { RegisterRoutes } from './routes/routes';
