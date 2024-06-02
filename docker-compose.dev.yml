@@ -11,8 +11,10 @@ services:
       - ./package-lock.json:/app/package-lock.json
       - ./tsconfig.json:/app/tsconfig.json
       - ./tsoa.json:/app/tsoa.json
+      - ./config:/app/config
     environment:
       - NODE_ENV=development
+      - PORT=5500
     command: npm run dev
 
 # docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
