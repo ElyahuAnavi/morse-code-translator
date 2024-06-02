@@ -1,0 +1,17 @@
+version: "3"
+services:
+  node-app:
+    build:
+      context: .
+      args:
+        NODE_ENV: production
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "5500:5500"
+    command: node dist/server.js
+
+
+# docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+
+# docker-compose -f docker-compose.yml -f docker-compose.prod.yml down -v
