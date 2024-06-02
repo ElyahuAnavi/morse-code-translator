@@ -1,4 +1,4 @@
-import { textToMorse, morseToText } from '../services/morseCodeService';
+import { textToMorse, morseToText } from '../src/services/morseCode.service';
 
 describe('Morse Code Service', () => {
   test('converts text to Morse code', () => {
