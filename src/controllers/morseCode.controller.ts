@@ -1,5 +1,5 @@
 // src/controllers/morseCode.controller.ts
-import { Controller, Post, Body, Route, Example } from 'tsoa';
+import { Controller, Post, Body, Route, Example, SuccessResponse } from 'tsoa';
 import { textToMorse, morseToText } from '../services/morseCode.service';
 import { TextToMorseRequest, MorseToTextRequest, TextToMorseRequestSchema, MorseToTextRequestSchema } from '../types/morseCode.types';
 
@@ -13,6 +13,7 @@ export class MorseCodeController extends Controller {
      */
     @Post('text-to-morse')
     @Example<TextToMorseRequest>({ text: 'HELLO' })
+    @SuccessResponse(200)
     public translateTextToMorse(@Body() request: TextToMorseRequest): string {
         // Validate request using Zod
         TextToMorseRequestSchema.parse(request);
@@ -27,6 +28,7 @@ export class MorseCodeController extends Controller {
      */
     @Post('morse-to-text')
     @Example<MorseToTextRequest>({ morse: '.... . .-.. .-.. ---' })
+    @SuccessResponse(200)
     public translateMorseToText(@Body() request: MorseToTextRequest): string {
         // Validate request using Zod
         MorseToTextRequestSchema.parse(request);

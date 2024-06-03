@@ -11,18 +11,11 @@ import type { Request as ExRequest, Response as ExResponse, RequestHandler, Rout
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
 const models: TsoaRoute.Models = {
-    "TextToMorseRequest": {
+    "MorseRequest": {
         "dataType": "refObject",
         "properties": {
-            "text": {"dataType":"string","required":true},
-        },
-        "additionalProperties": false,
-    },
-    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    "MorseToTextRequest": {
-        "dataType": "refObject",
-        "properties": {
-            "morse": {"dataType":"string","required":true},
+            "text": {"dataType":"string"},
+            "morse": {"dataType":"string"},
         },
         "additionalProperties": false,
     },
@@ -43,7 +36,7 @@ export function RegisterRoutes(app: Router) {
 
             async function MorseCodeController_translateTextToMorse(request: ExRequest, response: ExResponse, next: any) {
             const args: Record<string, TsoaRoute.ParameterSchema> = {
-                    request: {"in":"body","name":"request","required":true,"ref":"TextToMorseRequest"},
+                    request: {"in":"body","name":"request","required":true,"ref":"MorseRequest"},
             };
 
             // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -73,7 +66,7 @@ export function RegisterRoutes(app: Router) {
 
             async function MorseCodeController_translateMorseToText(request: ExRequest, response: ExResponse, next: any) {
             const args: Record<string, TsoaRoute.ParameterSchema> = {
-                    request: {"in":"body","name":"request","required":true,"ref":"MorseToTextRequest"},
+                    request: {"in":"body","name":"request","required":true,"ref":"MorseRequest"},
             };
 
             // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
