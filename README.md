@@ -118,5 +118,7 @@ After launching the server, the API endpoints can be accessed at `http://localho
 ### Endpoints
 - **POST /morse/text-to-morse**: Translate text to Morse code.
 - **POST /morse/morse-to-text**: Translate Morse code to text.
+  
+![image](https://github.com/ElyahuAnavi/morse-code-translator/assets/137146370/afe8e2eb-0b01-486c-8c2b-b19b039ba936)
 
 Feel free to clone the repo, try it out, and let me know what you think! Your feedback is highly appreciated.
