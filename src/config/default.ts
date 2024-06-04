@@ -1,6 +1,6 @@
 // config/default.ts
 
-module.exports = {
+export const defaults = {
   nodeEnv: 'development',
   port: 5500,
 };

@@ -2,5 +2,6 @@
   "watch": ["src"],
   "ext": "ts",
   "ignore": ["src/__tests__/*"],
-  "exec": "ts-node src/server.ts"
+  "exec": "ts-node -r tsconfig-paths/register src/server.ts"
 }
+
