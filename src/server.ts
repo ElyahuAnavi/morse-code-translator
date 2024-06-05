@@ -1,7 +1,7 @@
 // src/server.ts
 import express from 'express';
 import bodyParser from 'body-parser';
-import { RegisterRoutes } from './routes/models';
+import { RegisterRoutes } from './routes/routes'; // Adjusted to relative path
 import swaggerUi from 'swagger-ui-express';
 import { vars } from './config/vars';
 
