@@ -1,8 +1,7 @@
 // src/server.ts
 import express from 'express';
 import bodyParser from 'body-parser';
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { default: RegisterRoutes } = require('../dist/routes');
+import { RegisterRoutes } from './routes/models';
 import swaggerUi from 'swagger-ui-express';
 import { vars } from './config/vars';
 
@@ -13,14 +12,13 @@ app.use(bodyParser.json());
 
 RegisterRoutes(app);
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const swaggerDocument = require('../dist/swagger.json');
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
   res.status(err.status || 500).json({
     message: err.message,
-    error: err,
+    error: err
   });
 });
 
