@@ -11,11 +11,18 @@ import type { Request as ExRequest, Response as ExResponse, RequestHandler, Rout
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
 const models: TsoaRoute.Models = {
-    "MorseRequest": {
+    "TextToMorseRequest": {
         "dataType": "refObject",
         "properties": {
-            "text": {"dataType":"string"},
-            "morse": {"dataType":"string"},
+            "text": {"dataType":"string","required":true},
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "MorseToTextRequest": {
+        "dataType": "refObject",
+        "properties": {
+            "morse": {"dataType":"string","required":true},
         },
         "additionalProperties": false,
     },
@@ -36,7 +43,7 @@ export function RegisterRoutes(app: Router) {
 
             async function MorseCodeController_translateTextToMorse(request: ExRequest, response: ExResponse, next: any) {
             const args: Record<string, TsoaRoute.ParameterSchema> = {
-                    request: {"in":"body","name":"request","required":true,"ref":"MorseRequest"},
+                    request: {"in":"body","name":"request","required":true,"ref":"TextToMorseRequest"},
             };
 
             // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -53,7 +60,7 @@ export function RegisterRoutes(app: Router) {
                 response,
                 next,
                 validatedArgs,
-                successStatus: undefined,
+                successStatus: 200,
               });
             } catch (err) {
                 return next(err);
@@ -66,7 +73,7 @@ export function RegisterRoutes(app: Router) {
 
             async function MorseCodeController_translateMorseToText(request: ExRequest, response: ExResponse, next: any) {
             const args: Record<string, TsoaRoute.ParameterSchema> = {
-                    request: {"in":"body","name":"request","required":true,"ref":"MorseRequest"},
+                    request: {"in":"body","name":"request","required":true,"ref":"MorseToTextRequest"},
             };
 
             // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -83,7 +90,7 @@ export function RegisterRoutes(app: Router) {
                 response,
                 next,
                 validatedArgs,
-                successStatus: undefined,
+                successStatus: 200,
               });
             } catch (err) {
                 return next(err);

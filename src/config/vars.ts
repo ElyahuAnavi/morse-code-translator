@@ -1,10 +1,9 @@
 // config/vars.ts
 
 import dotenv from 'dotenv';
-const defaults = require('./default');
+import { defaults } from './default';
 
 dotenv.config();
-
 
 export const vars = {
   nodeEnv: process.env.NODE_ENV || defaults.nodeEnv,
