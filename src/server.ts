@@ -12,13 +12,13 @@ app.use(bodyParser.json());
 
 RegisterRoutes(app);
 
-const swaggerDocument = require('../dist/swagger.json');
+import swaggerDocument from '../dist/swagger.json';
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+app.use((err: any, req: express.Request, res: express.Response) => {
   res.status(err.status || 500).json({
     message: err.message,
-    error: err
+    error: err,
   });
 });
 
